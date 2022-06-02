@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+:root{
+    --input-red: #ff4a56;
+    --chat-button-red: #AD323A;
+    --msg-received:#61393C;
+    --msg-sent:#E6878E;
+    
+  }
+
+body{
+    background-color: var(--input-red);;
+}
