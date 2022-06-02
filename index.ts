@@ -1,5 +1,6 @@
 import { rtdb,firestore } from "./db";
 import { nanoid } from "nanoid";
+import 'dotenv/config'
 import * as cors from "cors";
 //import {v4  as uuidv4} from "uuid"
 var express = require("express");
@@ -95,8 +96,14 @@ app.post("/auth",(req,res)=>{
 .get()
 .then((searchResponse)=>{
   if(searchResponse.empty){
-      res.status(404).json({
-        message:"Not found"
+    userCollection.add({
+      email,
+      name
+    }).then(newUserRef=>{
+      res.json({
+        id:newUserRef.id,
+        new:true
+        })
       })
   }else{
     res.json({

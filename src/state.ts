@@ -1,7 +1,7 @@
 import {rtdb } from "./rtdb"
 import {map} from "lodash"
 
-const API_BASE_URL = "http://localhost:3000"
+const API_BASE_URL ="https://dwf-m6-chatroom.herokuapp.com/"
 
 const state = {
   data: {
@@ -53,6 +53,28 @@ const state = {
     const cs = this.getState();
     cs.roomId = roomId
     this.setState(cs);
+  },
+  createUser() {
+    const cs = this.getState();
+    if (cs.email) {
+      fetch(`${API_BASE_URL}/signup`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: cs.name, email: cs.email }),
+      })
+        .then(data => {
+          return data.json();
+        })
+        .then(res => {
+          cs.userId = res.id;
+          this.setState(cs);  
+        })
+      }else {
+      alert("Debes colocar un mail.");
+        }
+
   },
   signIn(callback) {
     const cs = this.getState();
