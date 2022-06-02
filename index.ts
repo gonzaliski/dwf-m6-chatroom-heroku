@@ -90,6 +90,7 @@ userCollection
 
 app.post("/auth",(req,res)=>{
   const {email} = req.body;
+  const {name} = req.body;
 
   userCollection
 .where("email","==",email)
