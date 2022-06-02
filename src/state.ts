@@ -1,4 +1,4 @@
-import {rtdb } from "./rtdb"
+import {rtdb} from "./rtdb"
 import {map} from "lodash"
 
 const API_BASE_URL ="https://dwf-m6-chatroom.herokuapp.com/"

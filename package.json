@@ -21,9 +21,6 @@
   },
   "name": "chatroom",
   "version": "1.0.0",
-  "engines": {
-    "node": "16.15.0"
-  },
   "license": "MIT",
   "scripts": {
     "dev:front": "parcel serve ./src/index.html",
