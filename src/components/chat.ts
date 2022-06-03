@@ -105,6 +105,8 @@ class Chat extends HTMLElement {
             max-width:160px;
             border-radius:6px;
             padding:15px;
+            word-wrap: break-word;
+             max-width: 30vw;
         }
         .box.received{
             background-color: var(--msg-received);
